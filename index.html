@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jinix Chacko | Data Scientist</title>
+    <meta name="description" content="Portfolio of Jinix Chacko, Data Scientist & ML Engineer.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617; /* Dark Navy Blue */
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* ✨ INTERACTIVE MOUSE AURORA EFFECT - IMPROVED BLUR/INTENSITY */
+        #aurora-blob {
+            background: radial-gradient(600px circle at var(--x) var(--y), rgba(0, 194, 255, 0.15), transparent 80%);
+            border-radius: 50%;
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            pointer-events: none;
+            /* Added smooth transition for a more fluid movement */
+            transition: background 0.05s linear; 
+        }
+
+        /* ✨ Glassmorphism Card Style with Shine Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            transition: all 0.4s ease-out; /* Slower and smoother transition */
+            position: relative;
+            overflow: hidden;
+            /* Subtle inner shadow for depth */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); 
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 255, 255, 0.6); /* Brighter hover border */
+            transform: translateY(-10px) scale(1.02); /* More noticeable lift and slight scale */
+            box-shadow: 0 10px 40px rgba(0, 255, 255, 0.2); /* Cyan glow shadow */
+        }
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 100%;
+            height: 100%;
+            /* Brighter, more defined shine */
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent); 
+            transform: skewX(-25deg);
+            transition: left 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother animation curve */
+        }
+        .glass-card:hover::before {
+            left: 150%;
+        }
+        
+        /* Make entire certification card clickable */
+        .certification-link {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+        .certification-link:hover .text-white {
+             color: #22d3ee; /* text-cyan-400 on hover */
+        }
+
+        /* ✨ ADVANCED ANIMATIONS (Visibility Check) */
+        .animate-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out; /* Longer, smoother transition */
+        }
+        .animate-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Hero cinematic entrance */
+        .hero-animate-1 { animation: slideUpFadeIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards; }
+        .hero-animate-2 { animation: slideUpFadeIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s forwards; }
+        .hero-animate-3 { animation: slideUpFadeIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s forwards; }
+        .hero-animate-4 { animation: slideUpFadeIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s forwards; }
+        
+        @keyframes slideUpFadeIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Custom scrollbar for aesthetic touch */
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+        body::-webkit-scrollbar-track {
+            background: #0f172a; /* slate-900 */
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: #06b6d4; /* cyan-600 */
+            border-radius: 20px;
+            border: 2px solid #0f172a;
+        }
+
+    </style>
+</head>
+<body class="bg-slate-950">
+
+    <div id="aurora-blob"></div>
+
+    <div class="relative z-10">
+        <header class="bg-slate-950/70 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-white/10">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-white">Jinix Chacko</a>
+                <nav class="hidden md:flex space-x-8 text-sm">
+                    <a href="#about" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300">About</a>
+                    <a href="#skills" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300">Skills</a>
+                    <a href="#certifications" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300">Certifications</a>
+                    <a href="#projects" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300">Projects</a>
+                    <a href="#contact" class="text-gray-300 hover:text-cyan-400 transition-colors duration-300">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container mx-auto px-6 pt-24">
+
+            <section id="about" class="min-h-screen flex flex-col items-center justify-center text-center">
+                <div class="max-w-5xl w-full">
+                    <h1 class="text-6xl md:text-8xl font-bold text-white mb-4 opacity-0 hero-animate-1">
+                        Hello, I'm 
+                        <span class="bg-gradient-to-r from-cyan-400 to-fuchsia-500 text-transparent bg-clip-text">
+                            Jinix Chacko.
+                        </span>
+                    </h1>
+                    <h2 class="text-2xl md:text-4xl font-semibold text-cyan-300 mb-6 opacity-0 hero-animate-2">Data Scientist & Machine Learning Engineer</h2>
+                    <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto opacity-0 hero-animate-3">
+                        I build intelligent solutions using ML and deep learning, turning data into real-world impact.
+                    </p>
+                    <div class="mt-8 flex flex-wrap gap-4 justify-center opacity-0 hero-animate-4">
+                        <a href="#projects" class="bg-cyan-500 text-white font-semibold py-3 px-8 rounded-full hover:bg-cyan-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/50">View My Work</a>
+                        <a href="Jinix_Chacko_Resume.pdf" download class="border-2 border-gray-600 text-gray-300 font-semibold py-3 px-8 rounded-full hover:bg-gray-700 hover:border-gray-700 transition-colors duration-300">Download CV</a>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="space-y-28 md:space-y-40">
+
+            <section id="skills" class="py-20 animate-in">
+                <h2 class="text-4xl font-bold text-center text-white mb-16">My Technical & Professional Skills</h2>
+                <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8">
+                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center"><h3 class="text-xl md:text-2xl font-bold text-cyan-400 mb-4">Languages</h3><ul class="space-y-2 text-base md:text-lg"><li>Python</li><li>R</li><li>SQL</li></ul></div>
+                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center"><h3 class="text-xl md:text-2xl font-bold text-cyan-400 mb-4">ML / DL</h3><ul class="space-y-2 text-base md:text-lg"><li>Scikit-learn</li><li>TensorFlow</li><li>Computer Vision</li><li>NLP</li></ul></div>
+                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center"><h3 class="text-xl md:text-2xl font-bold text-cyan-400 mb-4">Frameworks</h3><ul class="space-y-2 text-base md:text-lg"><li>Streamlit</li><li>Flask</li><li>Pandas</li><li>Plotly</li></ul></div>
+                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center"><h3 class="text-xl md:text-2xl font-bold text-cyan-400 mb-4">Tools</h3><ul class="space-y-2 text-base md:text-lg"><li>Power BI</li><li>Tableau</li><li>Git & GitHub</li><li>Docker</li></ul></div>
+                    
+                    <div class="glass-card p-6 md:p-8 rounded-2xl text-center"><h3 class="text-xl md:text-2xl font-bold text-cyan-400 mb-4">Soft Skills</h3><ul class="space-y-2 text-base md:text-lg"><li>Problem-Solving</li><li>Communication</li><li>Teamwork</li><li>Leadership</li></ul></div>
+                </div>
+            </section>
+
+            <section id="certifications" class="py-20 animate-in">
+                <h2 class="text-4xl font-bold text-center text-white mb-16">Certifications & Achievements</h2>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                    <a href="https://coursera.org/share/97438dd47de70f0cfff05f0e9cac2b6a" target="_blank" rel="noopener noreferrer" class="certification-link glass-card p-6 rounded-2xl flex items-center gap-5">
+                        <div class="flex-shrink-0"><svg class="w-10 h-10 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                        <div><h3 class="text-xl font-bold text-white">Microsoft Power BI Data Analyst</h3><p class="text-gray-400">Microsoft on Coursera | June 2024</p></div>
+                    </a>
+                    <a href="https://coursera.org/share/db948ebf6fd5857e9936b618a9cb48e6" target="_blank" rel="noopener noreferrer" class="certification-link glass-card p-6 rounded-2xl flex items-center gap-5">
+                        <div class="flex-shrink-0"><svg class="w-10 h-10 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                        <div><h3 class="text-xl font-bold text-white">Meta Data Analyst</h3><p class="text-gray-400">Meta on Coursera | Jan 2025</p></div>
+                    </a>
+                    <a href="https://coursera.org/share/1ca34aeb89e25b686fa46ac5b2953e0a" target="_blank" rel="noopener noreferrer" class="certification-link glass-card p-6 rounded-2xl flex items-center gap-5">
+                        <div class="flex-shrink-0"><svg class="w-10 h-10 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                        <div><h3 class="text-xl font-bold text-white">Google Data Analytics</h3><p class="text-gray-400">Google on Coursera | June 2025</p></div>
+                    </a>
+                    <a href="https://coursera.org/share/c60fc6007d659548f5973aa612cce182" target="_blank" rel="noopener noreferrer" class="certification-link glass-card p-6 rounded-2xl flex items-center gap-5">
+                        <div class="flex-shrink-0"><svg class="w-10 h-10 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                        <div><h3 class="text-xl font-bold text-white">Python for Data Science, AI & Dev</h3><p class="text-gray-400">Issued by IBM</p></div>
+                    </a>
+                </div>
+            </section>
+
+            <section id="projects" class="py-20 animate-in">
+                <h2 class="text-4xl font-bold text-center text-white mb-16">Featured Projects</h2>
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div class="glass-card rounded-2xl overflow-hidden flex flex-col"><div class="p-8 flex-grow"><h3 class="text-2xl font-bold text-white mb-2">Player Injury Risk Dashboard</h3><p class="text-gray-400 mb-4">Predictive dashboard using wearable data and NLP chatbot for training advice.</p><p class="text-sm text-cyan-400 font-semibold">Tools: Streamlit, Scikit-learn, NLP</p></div><div class="p-6 border-t border-white/10"><a href="https://github.com/Jin-ix/PreHab" target="_blank" rel="noopener noreferrer" class="font-semibold text-white hover:text-cyan-400 transition-colors duration-300">View Project &rarr;</a></div></div>
+                    <div class="glass-card rounded-2xl overflow-hidden flex flex-col"><div class="p-8 flex-grow"><h3 class="text-2xl font-bold text-white mb-2">Alzheimer’s Disease Prediction</h3><p class="text-gray-400 mb-4">Classified MRI brain images into stages of Alzheimer's using CNN & ResNet models.</p><p class="text-sm text-cyan-400 font-semibold">Tools: TensorFlow, Keras, Computer Vision</p></div><div class="p-6 border-t border-white/10"><a href="https://github.com/Jin-ix/Alzheimer-s-disease-prediction-from-MRI" target="_blank" rel="noopener noreferrer" class="font-semibold text-white hover:text-cyan-400 transition-colors duration-300">View Project &rarr;</a></div></div>
+                    <div class="glass-card rounded-2xl overflow-hidden flex flex-col"><div class="p-8 flex-grow"><h3 class="text-2xl font-bold text-white mb-2">AgroHub</h3><p class="text-gray-400 mb-4">A smart platform for farmers using predictive analytics for crop prices and rainfall.</p><p class="text-sm text-cyan-400 font-semibold">Tools: Python, Streamlit, Pandas, Plotly</p></div><div class="p-6 border-t border-white/10"><a href="https://github.com/Jin-ix/AgroHub" target="_blank" rel="noopener noreferrer" class="font-semibold text-white hover:text-cyan-400 transition-colors duration-300">View Project &rarr;</a></div></div>
+                    
+                    <div class="glass-card rounded-2xl overflow-hidden flex flex-col"><div class="p-8 flex-grow"><h3 class="text-2xl font-bold text-white mb-2">Heart Disease Prediction</h3><p class="text-gray-400 mb-4">Interactive tool for visualizing and predicting heart disease risks from health data.</p><p class="text-sm text-cyan-400 font-semibold">Tools: Streamlit, Pandas, Random Forest</p></div><div class="p-6 border-t border-white/10"><a href="https://github.com/Jin-ix/Heart-Failure-Risk-Assessment-" target="_blank" rel="noopener noreferrer" class="font-semibold text-white hover:text-cyan-400 transition-colors duration-300">View Project &rarr;</a></div></div>
+                </div>
+            </section>
+
+            <section id="contact" class="py-20 text-center animate-in">
+                <h2 class="text-4xl font-bold text-white mb-4">Get In Touch</h2>
+                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">I'm actively looking for new opportunities. My inbox is always open, feel free to reach out!</p>
+                <a href="mailto:jinixch@gmail.com" class="inline-block bg-cyan-500 text-white font-semibold text-lg py-4 px-10 rounded-full hover:bg-cyan-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/50 mb-10">Say Hello</a>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://github.com/Jin-ix" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-transform duration-300 hover:scale-110"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg></a>
+                    <a href="http://www.linkedin.com/in/jinixchacko" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-transform duration-300 hover:scale-110"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                </div>
+            </section>
+            
+            </div>
+        </main>
+
+        <footer class="mt-20 border-t border-white/10">
+            <div class="container mx-auto px-6 py-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Jinix Chacko. Designed with passion and code.</p>
+                <p class="mt-2"><a href="Jinix_Chacko_Resume.pdf" download class="text-gray-400 hover:text-cyan-400 transition-colors">Download My Resume</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Interactive Aurora Blob (Improved for smoother transition)
+            const blob = document.getElementById('aurora-blob');
+            let mouseX = 0, mouseY = 0;
+
+            const updateBlob = () => {
+                blob.style.setProperty('--x', mouseX + 'px');
+                blob.style.setProperty('--y', mouseY + 'px');
+                requestAnimationFrame(updateBlob);
+            };
+
+            window.onpointermove = event => {
+                mouseX = event.clientX;
+                mouseY = event.clientY;
+            };
+
+            updateBlob(); // Start the smooth animation loop
+
+            // Scroll Animations (Intersection Observer)
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Do NOT unobserve for sections that might be animated again
+                        // observer.unobserve(entry.target); 
+                    }
+                });
+            }, { 
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px" // Load section slightly before it hits the bottom of the viewport
+            });
+
+            document.querySelectorAll('.animate-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
