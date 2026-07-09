@@ -5,31 +5,37 @@ const OTHER_PROJECTS = [
     title: "Alzheimer's Detection from MRI",
     desc: 'Fine-tuned ResNet-50 on ADNI MRI dataset achieving 89% classification accuracy; custom augmentation reduced overfitting by 15%. Modeled as a virtual neurological-state representation.',
     tech: 'PyTorch, ResNet-50, Transfer Learning',
-    href: 'https://github.com/Jin-ix',
+    href: 'https://github.com/Jin-ix/Alzheimer-s-disease-prediction-from-MRI',
   },
   {
     title: 'Parkinson\'s Detection via Voice',
     desc: 'Stacked ensemble scoring 94% F1 on 20+ acoustic biomarkers, outperforming baselines by 12%. REST API running at sub-200ms latency. Published at NSCETIT 2026.',
     tech: 'Python, scikit-learn, SHAP, FastAPI',
-    href: 'https://github.com/Jin-ix',
-  },
-  {
-    title: 'FitFlix — Pose Estimation',
-    desc: 'Real-time pose correction at 30 FPS. 90% joint-alignment error detection across 10+ exercise types. Deployed on AWS EC2 via Docker.',
-    tech: 'MediaPipe, OpenCV, Docker, AWS EC2',
-    href: 'https://github.com/Jin-ix',
+    href: 'https://github.com/Jin-ix/Parkinson-s-Disease-Detection-Using-Voice-Biomarkers',
   },
   {
     title: 'Knee Osteoporosis Classification',
     desc: 'CNN-based automated X-ray screening achieving 91% sensitivity; reduced manual clinical review time by 60%.',
     tech: 'CNN, PyTorch, Clinical Imaging',
-    href: 'https://github.com/Jin-ix',
+    href: 'https://github.com/Jin-ix/Improving-Early-Detection-of-Knee-Osteoporosis',
   },
   {
     title: 'AgroHub — Smart Agriculture',
     desc: 'Crop recommendation engine with 88% accuracy fusing soil NPK sensor data with live weather APIs.',
     tech: 'Python, Streamlit, Predictive Modelling',
     href: 'https://github.com/Jin-ix/AgroHub',
+  },
+  {
+    title: 'Hand Recognition',
+    desc: 'Real-time hand gesture recognition system utilizing computer vision for intuitive human-computer interaction.',
+    tech: 'Computer Vision, OpenCV, Python',
+    href: 'https://github.com/Jin-ix/Hand-Recognition',
+  },
+  {
+    title: 'AI Assisted Matrimony',
+    desc: 'AI-driven matchmaking platform leveraging machine learning to intelligently align user profiles and preferences.',
+    tech: 'Machine Learning, Web, AI',
+    href: 'https://github.com/Jin-ix/Matrimony',
   },
 ];
 
@@ -91,6 +97,17 @@ export default function Work() {
           </div>
         </Reveal>
 
+        <Reveal delay={0.4}>
+          <a
+            href="https://github.com/Jin-ix/Player-Digital-Twin"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center border border-white/20 bg-white/10 hover:bg-white/20 text-white rounded-full text-[14px] px-6 py-2.5 transition-colors"
+          >
+            View Source on GitHub
+          </a>
+        </Reveal>
+
         <div className="h-px bg-white/10 my-20" />
 
         <Reveal>
@@ -120,16 +137,6 @@ export default function Work() {
                     >
                       GitHub Source
                     </a>
-                    {p.title.includes('AgroHub') && (
-                      <a
-                        href={p.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center bg-emerald-500/20 hover:bg-emerald-500/40 text-emerald-400 border border-emerald-500/30 rounded-md text-[12px] px-3 py-1.5 transition-colors"
-                      >
-                        Live Demo
-                      </a>
-                    )}
                   </div>
                 </div>
               </div>

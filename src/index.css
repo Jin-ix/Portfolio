@@ -52,6 +52,19 @@ body {
   animation: fadeSlideUp 0.4s ease forwards;
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out 3s infinite;
+}
+
 ::selection {
   background: #0a0a0a;
   color: #ffffff;

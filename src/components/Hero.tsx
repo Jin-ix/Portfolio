@@ -64,7 +64,7 @@ export default function Hero() {
           initialized = true;
         }
 
-        currentLerpedTime += (targetTime - currentLerpedTime) * 0.08;
+        currentLerpedTime += (targetTime - currentLerpedTime) * 0.04;
         
         if (Math.abs(currentLerpedTime - videoRef.current.currentTime) > 0.02 && !videoRef.current.seeking) {
           videoRef.current.currentTime = currentLerpedTime;
@@ -141,7 +141,7 @@ export default function Hero() {
       <Crosshair className="absolute bottom-8 left-8 text-white hidden md:block z-10" />
       
       {/* HUD Code Snippet Top Right */}
-      <div className="absolute top-24 right-10 z-10 hidden lg:block border border-white/10 bg-black/40 backdrop-blur-md p-4 rounded-lg font-mono text-[11px] text-emerald-400 w-64 shadow-2xl">
+      <div className="absolute top-24 right-10 z-10 hidden lg:block border border-white/10 bg-black/40 backdrop-blur-md p-4 rounded-lg font-mono text-[11px] text-emerald-400 w-64 shadow-2xl animate-float">
         <div className="flex gap-2 mb-2 pb-2 border-b border-white/10 opacity-60">
           <span className="w-2 h-2 rounded-full bg-red-500"></span>
           <span className="w-2 h-2 rounded-full bg-yellow-500"></span>
@@ -163,7 +163,7 @@ export default function Hero() {
       </div>
 
       {/* HUD Live Metrics Bottom Right */}
-      <div className="absolute bottom-12 right-10 z-10 hidden md:flex flex-col gap-4">
+      <div className="absolute bottom-12 right-10 z-10 hidden md:flex flex-col gap-4 animate-float-delayed">
         <div className="border border-white/10 bg-black/40 backdrop-blur-md p-4 rounded-lg shadow-2xl w-56 flex flex-col gap-3">
           <div className="flex justify-between items-center text-[10px] uppercase tracking-widest text-white/50 border-b border-white/10 pb-2">
             <span>System Status</span>
