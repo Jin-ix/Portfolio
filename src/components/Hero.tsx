@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useTypewriter } from '../hooks/useTypewriter';
 
 const TYPEWRITER_TEXT =
-  "Architecting digital twins & explainable systems.";
+  "I'm Jinix Chacko. Architecting digital twins & explainable systems.";
 
 function CopyIcon() {
   return (
