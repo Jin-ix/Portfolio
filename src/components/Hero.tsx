@@ -33,8 +33,6 @@ export default function Hero() {
   const [copied, setCopied] = useState(false);
   const [liveMetric, setLiveMetric] = useState(142);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const prevX = useRef<number | null>(null);
-
   // HUD Metric Jitter
   useEffect(() => {
     const interval = setInterval(() => {
@@ -48,57 +46,6 @@ export default function Hero() {
     return () => clearTimeout(t);
   }, []);
 
-  useEffect(() => {
-    let animationFrameId: number;
-    let targetTime = 0;
-    let currentLerpedTime = 0;
-    let initialized = false;
-
-    const SENSITIVITY = 0.8;
-    
-    function loop() {
-      if (videoRef.current && Number.isFinite(videoRef.current.duration)) {
-        if (!initialized) {
-          targetTime = videoRef.current.currentTime;
-          currentLerpedTime = targetTime;
-          initialized = true;
-        }
-
-        currentLerpedTime += (targetTime - currentLerpedTime) * 0.04;
-        
-        if (Math.abs(currentLerpedTime - videoRef.current.currentTime) > 0.02 && !videoRef.current.seeking) {
-          videoRef.current.currentTime = currentLerpedTime;
-        }
-      }
-      animationFrameId = requestAnimationFrame(loop);
-    }
-    
-    function onMove(e: MouseEvent) {
-      if (!videoRef.current || !Number.isFinite(videoRef.current.duration)) return;
-      
-      const currentX = e.clientX;
-      if (prevX.current === null) {
-        prevX.current = currentX;
-        return;
-      }
-      
-      const delta = currentX - prevX.current;
-      prevX.current = currentX;
-      
-      const timeDelta = (delta / window.innerWidth) * SENSITIVITY * videoRef.current.duration;
-      targetTime += timeDelta;
-      
-      targetTime = Math.max(0, Math.min(targetTime, videoRef.current.duration));
-    }
-
-    window.addEventListener('mousemove', onMove);
-    animationFrameId = requestAnimationFrame(loop);
-    
-    return () => {
-      window.removeEventListener('mousemove', onMove);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
 
   async function handleCopy() {
     try {
@@ -126,6 +73,8 @@ export default function Hero() {
         muted
         playsInline
         preload="auto"
+        autoPlay
+        loop
         className="fixed inset-0 z-0 object-cover w-full h-full opacity-60 mix-blend-luminosity"
         style={{ objectPosition: '70% center', filter: 'contrast(1.2)' }}
       />

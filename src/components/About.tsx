@@ -16,11 +16,12 @@ const LEADERSHIP = [
 ];
 
 const CERTS = [
-  'Google Data Analytics Professional',
-  'Meta Data Analyst Professional',
+  'Google Data Analytics Professional Certificate',
+  'Meta Data Analyst Professional Certificate',
   'IBM Machine Learning with Python',
   'Microsoft Power BI Data Analyst (PL-300)',
   'Python and Statistics for Financial Analysis',
+  'Data Visualization using Power BI',
 ];
 
 export default function About() {
@@ -70,6 +71,7 @@ export default function About() {
                   <li>Specialized in Machine Learning, Computer Vision, and Statistical Modelling.</li>
                   <li>Capstone dissertation graded and externally examined as a production-deployed AI-driven digital twin platform.</li>
                   <li>Active college athlete (Football, Badminton) balancing rigorous academics with sports.</li>
+                  <li>Result: 4.47/5 CGPA</li>
                 </ul>
               </div>
             </Reveal>

@@ -17,13 +17,13 @@ export default function Navbar() {
       <nav className="fixed top-0 left-0 right-0 z-10 flex items-center justify-between px-5 sm:px-8 py-4 sm:py-5">
         <a href="#top" className="flex items-center gap-3" onClick={closeMenu}>
           <span
-            className="text-[21px] sm:text-[26px] tracking-tight text-white"
+            className="text-[18px] sm:text-[20px] tracking-tight text-white"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             Jinix Chacko
           </span>
           <span
-            className="text-[25px] sm:text-[30px] text-white select-none"
+            className="text-[20px] sm:text-[24px] text-white select-none"
             style={{ letterSpacing: '-0.02em' }}
             aria-hidden="true"
           >
@@ -31,7 +31,7 @@ export default function Navbar() {
           </span>
         </a>
 
-        <div className="hidden md:flex flex-row items-center gap-1 text-[23px] text-white">
+        <div className="hidden md:flex flex-row items-center gap-1 text-[15px] text-white">
           {NAV_LINKS.map((link, i) => (
             <span key={link.href} className="flex items-center">
               <a href={link.href} className="hover:opacity-60 transition-opacity">
@@ -46,13 +46,13 @@ export default function Navbar() {
           <a
             href="/Jinix_Chacko_Resume.pdf"
             download
-            className="text-[17px] text-white border border-white/20 bg-white/5 rounded-full px-4 py-1.5 hover:bg-white hover:text-black transition-colors"
+            className="text-[14px] text-white border border-white/20 bg-white/5 rounded-full px-4 py-1.5 hover:bg-white hover:text-black transition-colors"
           >
             Download Résumé
           </a>
           <a
             href="#contact"
-            className="text-[23px] text-white underline underline-offset-2 hover:opacity-60 transition-opacity"
+            className="text-[15px] text-white underline underline-offset-2 hover:opacity-60 transition-opacity"
           >
             Get in touch
           </a>
@@ -94,7 +94,7 @@ export default function Navbar() {
           <a
             key={link.href}
             href={link.href}
-            className="text-[32px] font-medium text-white"
+            className="text-[24px] font-medium text-white"
             onClick={closeMenu}
           >
             {link.label}
@@ -103,14 +103,14 @@ export default function Navbar() {
         <a
           href="/Jinix_Chacko_Resume.pdf"
           download
-          className="text-[32px] font-medium text-white border border-white/20 bg-white/5 rounded-full px-6 py-2"
+          className="text-[20px] font-medium text-white border border-white/20 bg-white/5 rounded-full px-6 py-2"
           onClick={closeMenu}
         >
           Download Résumé
         </a>
         <a
           href="#contact"
-          className="text-[32px] font-medium text-white underline underline-offset-2"
+          className="text-[24px] font-medium text-white underline underline-offset-2"
           onClick={closeMenu}
         >
           Get in touch
